@@ -1,6 +1,6 @@
-# VRChat お砂糖仲介 公式サイト
+# Sugar♪Sugar Matching 公式サイト
 
-VRChat専門のお砂糖（パートナー）マッチング・相談窓口の公式サイトです。
+VRChat専門のお砂糖（パートナー）マッチング・相談窓口「Sugar♪Sugar Matching」の公式サイトです。
 GitHub Pages で公開しています。
 
 ## 構成
