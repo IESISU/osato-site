@@ -1,19 +1,11 @@
-# Sugar♪Sugar Matching 公式サイト
+# Sugar♪Sugar Matching
 
-VRChat専門のお砂糖（パートナー）マッチング・相談窓口「Sugar♪Sugar Matching」の公式サイトです。
-GitHub Pages で公開しています。
+VRChatのお砂糖（パートナー）マッチングを題材にした、**架空のサービス**のコンセプトサイトです。
+実際のマッチングの受付、ご依頼、お金の受け取りは一切行っていません。
+
+公開URL: https://sugar-matching.github.io/
 
 ## 構成
 
-- `index.html` … サイト本体（HTML / CSS / JavaScript をこの1ファイルにまとめています）
+- `index.html` … サイト本体（HTML / CSS / JavaScript）
 - `img/` … キャラクター「シュガ」の立ち絵・表情・装飾画像
-
-## 更新のしかた
-
-1. `index.html` や `img/` のファイルを書き換える
-2. GitHub にコミット（アップロード）する
-3. 1〜2分で公開中のサイトに反映される
-
-## お問い合わせ
-
-X: [@captain__Idol](https://x.com/captain__Idol)
