@@ -156,35 +156,6 @@ section.block .wrap{position:relative;padding-block:64px;display:flex;flex-direc
 .worry p{font-size:15px;color:var(--muted)}
 @media (max-width:760px){.worries{grid-template-columns:1fr}.worry{flex-direction:row}.worry .pic{flex:0 0 38%;aspect-ratio:auto}}
 
-/* character */
-.chara{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:20px;align-items:stretch}
-.turn-card{padding:22px;display:flex;flex-direction:column;gap:14px;align-items:center}
-.turn{position:relative;width:100%;height:340px;cursor:grab;touch-action:pan-y;user-select:none}
-.turn:active{cursor:grabbing}
-.turn img{position:absolute;inset:0;margin:auto;height:100%;width:auto;max-width:100%;object-fit:contain;opacity:0;transform:scale(.96);transition:opacity .25s,transform .25s;pointer-events:none}
-.turn img.on{opacity:1;transform:none}
-.turn::after{content:"";position:absolute;left:20%;right:20%;bottom:-4px;height:14px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 30%,transparent),transparent)}
-.seg{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.seg button{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--strong);border-color:var(--strong);color:var(--on-strong)}
-.turn-card .hint{font-size:12px;color:var(--muted)}
-.profile{padding:24px;display:flex;flex-direction:column;gap:16px}
-.profile .name{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.profile .name h3{font-family:var(--display);font-weight:500;font-size:32px}
-.profile .name span{font-size:13px;font-weight:900;color:var(--ink);letter-spacing:.12em}
-.profile dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px;margin:0;font-size:15px}
-.profile dt{font-weight:900;color:var(--ink)}
-.profile dd{margin:0}
-.faces{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
-.faces button{padding:0;border:2px solid transparent;border-radius:14px;background:none;cursor:pointer;position:relative;transition:transform .2s}
-.faces button img{display:block;width:100%;height:auto;border-radius:12px}
-.faces button:hover{transform:translateY(-4px) rotate(-3deg)}
-.faces button[aria-pressed="true"]{border-color:var(--strong)}
-.facesay{display:flex;align-items:center;gap:12px;background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:10px 14px;min-height:72px}
-.facesay img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:0 0 auto}
-.facesay p{font-weight:700;font-size:15px}
-@media (max-width:860px){.chara{grid-template-columns:1fr}.faces{grid-template-columns:repeat(5,minmax(0,1fr))}}
-
 /* plans */
 .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
 .plan{position:relative;padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .3s}
@@ -347,7 +318,7 @@ footer .wrap{padding-block:26px 120px;display:flex;flex-direction:column;gap:4px
   <div class="wrap">
     <a class="logo" href="#top"><img src="img/icon2.webp" alt="" width="40" height="40"><span class="brand">Sugar<i>♪</i>Sugar Matching</span></a>
     <nav class="links" aria-label="ページ内">
-      <a href="#chara">シュガ</a><a href="#price">料金</a><a href="#flow">流れ</a><a href="#sheet">ヒアリングシート</a><a href="#rules">規約</a>
+      <a href="#price">料金</a><a href="#flow">流れ</a><a href="#sheet">ヒアリングシート</a><a href="#rules">規約</a>
     </nav>
     <a class="btn primary sm" href="#contact">運営について</a>
   </div>
@@ -403,37 +374,6 @@ footer .wrap{padding-block:26px 120px;display:flex;flex-direction:column;gap:4px
         <div class="card worry"><div class="pic"><img src="img/scene1.webp" alt="" loading="lazy" width="242" height="220"></div><div class="txt"><q>話しかけるのが苦手</q><p>お相手探しも、最初の会話のきっかけも、仲介者が間に入ります。</p></div></div>
         <div class="card worry"><div class="pic"><img src="img/scene2.webp" alt="" loading="lazy" width="234" height="216"></div><div class="txt"><q>どこで出会えばいいか分からない</q><p>イン時間や過ごし方、好みを伺って、合いそうな方をご紹介します。</p></div></div>
         <div class="card worry"><div class="pic"><img src="img/scene3.webp" alt="" loading="lazy" width="222" height="212"></div><div class="txt"><q>お砂糖になったあとが不安</q><p>距離感やすれ違いの悩みは、成立後のアフターケア相談で受け付けます。</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block alt" id="chara" data-navi="chara">
-    <div class="wrap">
-      <div class="sec-head"><img class="deco" src="img/d_halo.webp" alt="" width="94" height="50" style="width:84px"><h2>案内役のシュガです</h2><p>お見合いの橋渡しをする、見習いキューピッド。ぐるっと回したり、表情を押したりしてみてください。</p></div>
-      <div class="chara">
-        <div class="card turn-card">
-          <div class="turn" id="turn" aria-label="シュガの三面図。左右にドラッグで回転">
-            <img class="on" src="img/turn1.webp" alt="正面" loading="lazy">
-            <img src="img/turn2.webp" alt="横" loading="lazy">
-            <img src="img/turn3.webp" alt="うしろ" loading="lazy">
-            <img src="img/turn4.webp" alt="弓を構えたポーズ" loading="lazy">
-          </div>
-          <div class="seg" id="turnBtns">
-            <button type="button" aria-pressed="true" data-i="0">正面</button><button type="button" aria-pressed="false" data-i="1">横</button><button type="button" aria-pressed="false" data-i="2">うしろ</button><button type="button" aria-pressed="false" data-i="3">ポーズ</button>
-          </div>
-          <p class="hint">左右にドラッグしても回せます</p>
-        </div>
-        <div class="card profile">
-          <div class="name"><h3>シュガ</h3><span>CUPID IN TRAINING</span></div>
-          <dl>
-            <dt>おしごと</dt><dd>お見合いの橋渡しと、恋の矢の配達</dd>
-            <dt>すきなもの</dt><dd>角砂糖、ハートのもの、まったりワールド</dd>
-            <dt>とくぎ</dt><dd>初対面の気まずい空気をほぐすこと</dd>
-            <dt>くちぐせ</dt><dd>「〜だにゃ」</dd>
-          </dl>
-          <div class="faces" id="faces" role="group" aria-label="シュガの表情"></div>
-          <div class="facesay" aria-live="polite"><img id="faceImg" src="img/face1.webp" alt=""><p id="faceText">表情を押すと、シュガがしゃべるにゃ。</p></div>
-        </div>
       </div>
     </div>
   </section>
@@ -707,7 +647,6 @@ footer .wrap{padding-block:26px 120px;display:flex;flex-direction:column;gap:4px
   const naviLines = {
     hero:   [4, 'はじめまして！架空のキューピッド、シュガだにゃ。わたしをタップすると恋の矢が飛ぶよ。'],
     worries:[9, 'ひとりで悩まなくて大丈夫。仲介者とわたしがついてるにゃ。'],
-    chara:  [2, 'わたしのこと、もっと知ってほしいにゃ。くるっと回してみて！'],
     price:  [5, 'はじめてなら、お試し1,500円がおすすめだよ。'],
     sim:    [1, 'プランを選ぶと、わたしが計算するにゃ。'],
     flow:   [8, 'これは架空の流れだにゃ。実際の受付はしてないよ。'],
@@ -800,53 +739,6 @@ footer .wrap{padding-block:26px 120px;display:flex;flex-direction:column;gap:4px
       if (trailN++ < 12) burst(r.left + r.width / 2, r.top + r.height / 2, 1);
     }, 50);
     a.onfinish = () => { clearInterval(trail); arrow.remove(); hit(); };
-  });
-
-  /* ---------- turnaround ---------- */
-  const turn = $('turn'), timgs = [...turn.querySelectorAll('img')], tbtns = [...$('turnBtns').querySelectorAll('button')];
-  let ti = 0;
-  function setTurn(i){
-    ti = (i + 4) % 4;
-    timgs.forEach((im, k) => im.classList.toggle('on', k === ti));
-    tbtns.forEach((b, k) => b.setAttribute('aria-pressed', String(k === ti)));
-  }
-  tbtns.forEach((b) => b.addEventListener('click', () => setTurn(+b.dataset.i)));
-  let dragX = null;
-  turn.addEventListener('pointerdown', (e) => { dragX = e.clientX; turn.setPointerCapture(e.pointerId); });
-  turn.addEventListener('pointermove', (e) => {
-    if (dragX === null) return;
-    const d = e.clientX - dragX;
-    if (Math.abs(d) > 45){ setTurn(ti + (d < 0 ? 1 : -1)); dragX = e.clientX; }
-  });
-  const endDrag = () => { dragX = null; };
-  turn.addEventListener('pointerup', endDrag); turn.addEventListener('pointercancel', endDrag);
-
-  /* ---------- expressions ---------- */
-  const faceData = [
-    ['にこっ', 'よろしくね！いい出会い、いっしょに探そう。'],
-    ['ごきげん', 'お砂糖成立の報告が、いちばんうれしいにゃ〜。'],
-    ['ふふっ', '人見知りでも大丈夫。最初のひと言は、わたしにまかせて。'],
-    ['わくわく', 'どんな人がタイプ？ヒアリングで教えてね。'],
-    ['やったー', 'マッチング成立だにゃ！'],
-    ['ねえねえ', 'デートワールド、いっしょに選んであげよっか？'],
-    ['ちょっと照れ', 'えっ、わたしのこと気になるの……？'],
-    ['おしゃべり', 'お見合いの日は、会話の橋渡しもするよ。'],
-    ['ほっこり', 'ふたりがなかよしだと、わたしもうれしい。']
-  ];
-  const facesEl = $('faces');
-  faceData.forEach((f, i) => {
-    const b = document.createElement('button');
-    b.type = 'button'; b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false'); b.setAttribute('aria-label', f[0]);
-    const im = document.createElement('img'); im.src = face(i + 1); im.alt = ''; im.loading = 'lazy'; im.width = 133; im.height = 136;
-    b.appendChild(im);
-    b.addEventListener('click', (e) => {
-      facesEl.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', 'false'));
-      b.setAttribute('aria-pressed', 'true');
-      $('faceImg').src = face(i + 1);
-      type($('faceText'), f[1]);
-      burst(e.clientX, e.clientY, 6);
-    });
-    facesEl.appendChild(b);
   });
 
   /* ---------- simulator ---------- */
